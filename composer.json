@@ -1,0 +1,21 @@
+{
+    "name": "crisu83/shortid",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Christoffer Niska",
+            "email": "christofferniska@gmail.com"
+        }
+    ],
+    "require": {
+        "ircmaxell/random-lib": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crisu83\\ShortId\\": "src/"
+        }
+    },
+    "require-dev": {
+        "codeception/codeception": "~2.0"
+    }
+}
