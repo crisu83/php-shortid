@@ -1,5 +1,9 @@
 # php-shortid
 
+[![Build Status](https://travis-ci.org/crisu83/php-shortid.svg?branch=master)](https://travis-ci.org/crisu83/php-shortid)
+[![Code Climate](https://codeclimate.com/github/crisu83/php-shortid/badges/gpa.svg)](https://codeclimate.com/github/crisu83/php-shortid)
+[![Total Downloads](https://poser.pugx.org/crisu83/php-shortid/downloads.svg)](https://packagist.org/packages/crisu83/php-shortid) [![Latest Unstable Version](https://poser.pugx.org/crisu83/php-shortid/v/unstable.svg)](https://packagist.org/packages/crisu83/php-shortid) [![License](https://poser.pugx.org/crisu83/php-shortid/license.svg)](https://packagist.org/packages/crisu83/php-shortid)
+
 Library for generating short non-sequential unique identifiers in PHP.
 
 ## Why do I want this?
