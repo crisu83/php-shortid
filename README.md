@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/crisu83/php-shortid.svg?branch=master)](https://travis-ci.org/crisu83/php-shortid)
 [![Code Climate](https://codeclimate.com/github/crisu83/php-shortid/badges/gpa.svg)](https://codeclimate.com/github/crisu83/php-shortid)
-[![Total Downloads](https://poser.pugx.org/crisu83/shortid/downloads.svg)](https://packagist.org/packages/crisu83/shortid) [![Latest Unstable Version](https://poser.pugx.org/crisu83/shortid/v/unstable.svg)](https://packagist.org/packages/crisu83/shortid) [![License](https://poser.pugx.org/crisu83/shortid/license.svg)](https://packagist.org/packages/crisu83/shortid)
+[![Total Downloads](https://poser.pugx.org/crisu83/shortid/downloads)](https://packagist.org/packages/crisu83/shortid) [![Latest Unstable Version](https://poser.pugx.org/crisu83/shortid/v/unstable.svg)](https://packagist.org/packages/crisu83/shortid) [![License](https://poser.pugx.org/crisu83/shortid/license.svg)](https://packagist.org/packages/crisu83/shortid)
 
 Library for generating short non-sequential unique identifiers in PHP.
 
