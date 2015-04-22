@@ -8,10 +8,15 @@ Library for generating short non-sequential unique identifiers in PHP.
 
 ## Why do I want this?
 
-This library was created as an alternative to UUID (universally unique identifiers). 
-While the identifiers generated may not be truly unique, they are much more convenient because of their short form
+This library was created as a more convenient alternative to other unique identifer generators such as UUID. 
+While the identifiers generated may not be truly unique, they are more convenient because of their short form
 and unique enough to be used as e.g. entity ids, database identifiers, url-shorteners and much more.
- 
+
+## Disclaimer
+
+Please note that if your project requires the identifiers to be truly unique you should verify the uniqueness yourself.
+This is by design to both increase the performance and reduce the memory consumption when generating identifiers.
+
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
