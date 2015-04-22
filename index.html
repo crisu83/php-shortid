@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Short ID by crisu83</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Short ID</h1>
+      <h2 class="project-tagline">Library for generating short non-sequential unique identifiers in PHP</h2>
+      <a href="https://github.com/crisu83/php-shortid" class="btn">View on GitHub</a>
+      <a href="https://github.com/crisu83/php-shortid/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/crisu83/php-shortid/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="php-shortid" class="anchor" href="#php-shortid" aria-hidden="true"><span class="octicon octicon-link"></span></a>php-shortid</h1>
+
+<p><a href="https://travis-ci.org/crisu83/php-shortid"><img src="https://travis-ci.org/crisu83/php-shortid.svg?branch=master" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/crisu83/php-shortid"><img src="https://codeclimate.com/github/crisu83/php-shortid/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://packagist.org/packages/crisu83/shortid"><img src="https://poser.pugx.org/crisu83/shortid/downloads" alt="Total Downloads"></a> <a href="https://packagist.org/packages/crisu83/shortid"><img src="https://poser.pugx.org/crisu83/shortid/v/unstable.svg" alt="Latest Unstable Version"></a> <a href="https://packagist.org/packages/crisu83/shortid"><img src="https://poser.pugx.org/crisu83/shortid/license.svg" alt="License"></a></p>
+
+<p>Library for generating short non-sequential unique identifiers in PHP.</p>
+
+<h2>
+<a id="why-do-i-want-this" class="anchor" href="#why-do-i-want-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why do I want this?</h2>
+
+<p>This library was created as a more convenient alternative to other unique identifer generators such as UUID. 
+While the identifiers generated may not be truly unique, they are more convenient because of their short form
+and unique enough to be used as e.g. entity ids, database identifiers, url-shorteners and much more.</p>
+
+<h2>
+<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disclaimer</h2>
+
+<p>Please note that if your project requires the identifiers to be truly unique you should verify the uniqueness yourself.
+This is by design to both increase the performance and reduce the memory consumption when generating identifiers.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The preferred way to install this extension is through <a href="http://getcomposer.org/download/">composer</a>.</p>
+
+<p>Either run</p>
+
+<pre><code>php composer.phar require --prefer-dist crisu83/shortid "*"
+</code></pre>
+
+<p>or add</p>
+
+<pre><code>"crisu83/shortid": "*"
+</code></pre>
+
+<p>to the require section of your <code>composer.json</code> file.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Example usage:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\ShortId\ShortId</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">require</span>(<span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/../vendor/autoload.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$shortid</span> <span class="pl-k">=</span> <span class="pl-c1">ShortId</span><span class="pl-k">::</span>create();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shortid</span><span class="pl-k">-&gt;</span>generate();</span></pre></div>
+
+<p>Sample output:</p>
+
+<pre><code>$ php examples/examples.php
+mGRdss0
+cQEhtSm
+WAOsF0B
+Wxo-6hC
+njJM-67
+ySojqwP
+yz03QdC
+baDvRWZ
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/crisu83/php-shortid">Short ID</a> is maintained by <a href="https://github.com/crisu83">crisu83</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
