@@ -10,8 +10,6 @@
 
 namespace Crisu83\ShortId;
 
-use RandomLib\Factory;
-
 /**
  * Class ShortId
  * @package Crisu83\ShortId
@@ -30,10 +28,6 @@ class ShortId
      * @var string alphabet to use when generating the identifier (must be 64 characters long)
      */
     private $_alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
-    /**
-     * @var \RandomLib\Generator random generator instance.
-     */
-    private $_randomGenerator;
 
     /**
      * Creates a new generator.
@@ -50,8 +44,14 @@ class ShortId
      */
     public function generate()
     {
-        return $this->getRandomGenerator()
-            ->generateString($this->_length, $this->_alphabet);
+        $str     = '';
+        $keysize = strlen($this->_alphabet);
+
+        for ($i = 0; $i < $this->_length; ++$i) {
+            $str .= $this->_alphabet[\Sodium\randombytes_uniform($keysize)];
+        }
+
+        return $str;
     }
 
     /**
@@ -117,20 +117,6 @@ class ShortId
         if (strlen($alphabet) !== self::ALPHABET_LENGTH) {
             throw new \InvalidArgumentException();
         }
-    }
-
-    /**
-     * Returns the random generator instance (creating it if necessary).
-     * @return \RandomLib\Generator random generator instance.
-     */
-    protected function getRandomGenerator()
-    {
-        if (null === $this->_randomGenerator) {
-            $factory = new Factory();
-            $this->_randomGenerator = $factory->getMediumStrengthGenerator();
-        }
-
-        return $this->_randomGenerator;
     }
 
     /**

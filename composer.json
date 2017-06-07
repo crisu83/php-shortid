@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "ircmaxell/random-lib": "~1.1"
+        "paragonie/sodium_compat": "^0.7.0"
     },
     "autoload": {
         "psr-4": {
